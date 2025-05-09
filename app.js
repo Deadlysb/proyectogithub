@@ -36,6 +36,9 @@ const swaggerOption = {
 const swaggerDocs = swaggerJsdoc(swaggerOption);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+// Otorga permisos
+app.use(cors());
+
 const MONGO_URI = 'mongodb+srv://Ban:74121965@cluster0.05dslk0.mongodb.net/Certus?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGO_URI).then(()=>{
