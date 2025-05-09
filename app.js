@@ -41,7 +41,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Otorga permisos
 app.use(cors());
 
-const MONGO_URI = process.URL_Mongodb;
+const MONGO_URI = process.env.URL_Mongodb;
 
 mongoose.connect(MONGO_URI).then(()=>{
     console.log('se conectó correctamente');
