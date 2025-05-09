@@ -1,5 +1,7 @@
 // importando
 // Descargar npm install swagger-jsdoc swagger-ui-express
+// Descargar npm install dotenv
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -39,7 +41,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Otorga permisos
 app.use(cors());
 
-const MONGO_URI = 'mongodb+srv://Ban:74121965@cluster0.05dslk0.mongodb.net/Certus?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.URL_Mongodb;
 
 mongoose.connect(MONGO_URI).then(()=>{
     console.log('se conectó correctamente');
