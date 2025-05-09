@@ -23,6 +23,9 @@ const swaggerOption = {
         },
         servers: [
             {
+                url: 'https://proyectogithub-production.up.railway.app/'
+            },
+            {
                 url: 'http://localhost:4000'
             }
         ]
